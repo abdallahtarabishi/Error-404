@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Materials - Bisho</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<audio id="welcomeSound" src="camera-shutter-314056.mp3" autoplay></audio>
+
+<!-- HEADER -->
+<header>
+    <nav>
+            <ul class="nav-links">
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="Blog.html">Blog</a></li>
+                <li><a href="About Us.html">About Us</a></li>
+            </ul>
+        </nav>
+</header>
+<div class="tab-content">
+
+        <section class="materials-section">
+        <h2>Design</h2>
+        <div class="gallery">
+            <img src="Materials/Design3/soma.jpg" alt="Soma Douglas">
+            <img src="Materials/Design3/dark.jpg" alt="Mohammed Sadek">
+            <img src="Materials/Design3/bishoy khaled.jpg" alt="Bishoy Khaled">
+        </div>
+    </section>
+
+    <section class="materials-section">
+        <h2>Reels</h2>
+        <div class="gallery">
+            <video src="Materials/Reels/soma.mp4"loop></video>
+            <video src="Materials/Reels/finial edit.mp4" loop></video>
+            <video src="Materials/Reels/fiinal.mp4"loop></video>
+            <video src="Materials/Reels/3NWAN + PHONE.mp4"loop></video>
+        </div>
+    </section>
+
+
+    <section class="materials-section alazhar">
+    <h2>Al-Azhar University</h2>
+    <div class="gallery"> <img src="Materials/Al-Azhar Universtiy/Img1.jpg" alt="Al-Azhar">
+        <img src="Materials/Al-Azhar Universtiy/Img2.jpg" alt="Al-Azhar">
+        <img src="Materials/Al-Azhar Universtiy/Img3.jpg" alt="Al-Azhar">
+        <img src="Materials/Al-Azhar Universtiy/Img4.jpg" alt="Al-Azhar">
+        <img src="Materials/Al-Azhar Universtiy/Img5.jpg" alt="Al-Azhar">
+        <img src="Materials/Al-Azhar Universtiy/Img6.jpg" alt="Al-Azhar">
+        <img src="Materials/Al-Azhar Universtiy/Img7.jpg" alt="Al-Azhar">
+        <img src="Materials/Al-Azhar Universtiy/Img8.jpg" alt="Al-Azhar">
+        <img src="Materials/Al-Azhar Universtiy/Img10.jpg" alt="Al-Azhar">
+        <img src="Materials/Al-Azhar Universtiy/Img11.jpg" alt="Al-Azhar">
+        <img src="Materials/Al-Azhar Universtiy/Img12.jpg" alt="Al-Azhar">
+        <img src="Materials/Al-Azhar Universtiy/Img13.jpg" alt="Al-Azhar">
+        <img src="Materials/Al-Azhar Universtiy/Img14.jpg" alt="Al-Azhar">
+        <img src="Materials/Al-Azhar Universtiy/Img15.jpg" alt="Al-Azhar">
+        <img src="Materials/Al-Azhar Universtiy/Img17.jpg" alt="Al-Azhar">
+    </div>
+</section>
+
+<section class="materials-section church">
+    <h2>Church</h2>
+    <div class="gallery"> <img src="Materials/Church/Img1.jpg" alt="Church">
+        <img src="Materials/Church/Img2.jpg" alt="Church">
+        <img src="Materials/Church/Img3.jpg" alt="Church">
+        <img src="Materials/Church/Img4.jpg" alt="Church">
+        <img src="Materials/Church/Img5.jpg" alt="Church">
+        <img src="Materials/Church/Img6.jpg" alt="Church">
+        <img src="Materials/Church/Img7.jpg" alt="Church">
+        <img src="Materials/Church/Img8.jpg" alt="Church">
+    </div>
+</section>
+
+<section class="materials-section product">
+    <h2>Product</h2>
+    <div class="gallery"> <img src="Materials/Product/Img1.jpg" alt="Product">
+        <img src="Materials/Product/Img2.jpg" alt="Product">
+        <img src="Materials/Product/Img3.jpg" alt="Product">
+        <img src="Materials/Product/Img4.jpg" alt="Product">
+        <img src="Materials/Product/Img5.jpg" alt="Product">
+        <img src="Materials/Product/Img6.jpg" alt="Product">
+        <img src="Materials/Product/Img7.jpg" alt="Product">
+        <img src="Materials/Product/Img8.jpg" alt="Product">
+        <img src="Materials/Product/Img9.jpg" alt="Product">
+    </div>
+</section>
+</div>
+
+<script>
+const videos = document.querySelectorAll('.gallery video');
+videos.forEach(video => {
+    video.addEventListener('mouseenter', () => video.play());
+    video.addEventListener('mouseleave', () => video.pause());
+});
+</script>
+<!-- Lightbox Container -->
+<div id="lightbox">
+    <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+
+    document.querySelectorAll("img").forEach(img => {
+        img.addEventListener("click", () => {
+            lightbox.classList.add("active");
+            lightboxImg.src = img.src;
+        });
+    });
+
+    lightbox.addEventListener("click", () => {
+        lightbox.classList.remove("active");
+    });
+</script>
+</body>
+</html>
