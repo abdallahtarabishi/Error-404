@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Laptop Services</title>
+
+  <!-- Cairo Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main Hacker Style -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <audio id="welcomeSound" src="glitch.mp3" autoplay></audio>
+  <!-- ===== Background Hacker Video ===== -->
+  <video autoplay loop muted playsinline class="bg-video">
+    <source src="hack.mp4" type="video/mp4">
+  </video>
+
+  <!-- ===== Navigation ===== -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="laptop.html">Laptop</a>
+    <a href="FeedBack.html">FeedBack</a>
+</nav>
+
+  <!-- ===== Page Content ===== -->
+  <div class="container center">
+    
+    <h1>Laptop Services</h1>
+
+   <div class="laptop-services">
+
+    <div class="service-box">
+        <h3>🔧 System Services</h3>
+        <ul>
+            <li>✔ System install & optimization</li>
+            <li>✔ Speed Up System</li>
+            <li>✔ Fix Software & Hardware issues</li>
+        </ul>
+    </div>
+
+    <div class="service-box">
+        <h3>💻 Laptop & Tablet</h3>
+        <ul>
+            <li>✔ Flash Official & Custom Windows</li>
+            <li>✔ Hardware + software combo fixes</li>
+            <li>✔ Consultation & troubleshooting</li>
+        </ul>
+    </div>
+
+    <div class="service-box">
+        <h3>📂 Data Services</h3>
+        <ul>
+            <li>✔ Data Recovery Without Format</li>
+            <li>✔ Backup & Restore</li>
+        </ul>
+    </div>
+</div>
+
+    <h2>🎥 Real Videos</h2>
+   <div class="videos">
+  <div class="videos">
+  <video muted controls controlsList="nodownload noremoteplayback" onclick="openModal(this.querySelector('source').src, 'video')">
+    <source src="Laptop/lap1.mp4" type="video/mp4">
+  </video>
+  <video muted controls controlsList="nodownload noremoteplayback" onclick="openModal(this.querySelector('source').src, 'video')">
+    <source src="Laptop/lap2.mp4" type="video/mp4">
+  </video>
+  <video muted controls controlsList="nodownload noremoteplayback" onclick="openModal(this.querySelector('source').src, 'video')">
+    <source src="Laptop/lap4.mp4" type="video/mp4">
+  </video>
+  <video muted controls controlsList="nodownload noremoteplayback" onclick="openModal(this.querySelector('source').src, 'video')">
+    <source src="Laptop/lap5.mp4" type="video/mp4">
+  </video>
+  <video muted controls controlsList="nodownload noremoteplayback" onclick="openModal(this.querySelector('source').src, 'video')">
+    <source src="Laptop/lap6.mp4" type="video/mp4">
+  </video>
+  <video muted controls controlsList="nodownload noremoteplayback" onclick="openModal(this.querySelector('source').src, 'video')">
+    <source src="Laptop/lap7.mp4" type="video/mp4">
+  </video>
+</div>
+
+
+  </div>
+
+  <!-- ========== Modal ========== -->
+  <div id="myModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <div class="modal-content" id="modalContent"></div>
+  </div>
+
+<script>
+  function openModal(src, type) {
+    const modal = document.getElementById('myModal');
+    const modalContent = document.getElementById('modalContent');
+
+    if(type === 'image'){
+      modalContent.innerHTML = `<img src="${src}" style="width:100%; max-height:90vh; border-radius:12px;">`;
+    } else if(type === 'video'){
+      modalContent.innerHTML = `<video autoplay controls style="width:100%; max-height:90vh; border-radius:12px;"><source src="${src}" type="video/mp4"></video>`;
+    }
+
+    modal.style.display = 'flex';
+  }
+
+  function closeModal() {
+    const modal = document.getElementById('myModal');
+    modal.style.display = 'none';
+    const video = modal.querySelector('video');
+    if(video) video.pause();
+  }
+
+  window.onclick = function(e) {
+    const modal = document.getElementById('myModal');
+    if(e.target === modal) closeModal();
+  }
+</script>
+
+</body>
+</html>
