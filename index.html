@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dual Website Portal</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Left (You) -->
+    <div class="side left">
+        <div class="content">
+            <div class="img-box">
+                <img src="Abdallah El Tarabishi/img/boda.jpg" alt="My Photo">
+            </div>
+
+            <h1>Abdallah El Tarabishi</h1>
+            <p>FullStack & GSM Specialist</p>
+            <p>Visit My World</p>
+
+            <div class="about-box">
+                <h3>Tech Services</h3>
+                <p>
+                    Laptop & computer repair, software & hardware solutions, device unlocking, cybersecurity,
+                    data recovery, and advanced GSM solutions.
+                </p>
+            </div>
+
+            <button class="btn-go" data-url="Abdallah El Tarabishi/index.html" data-sound="hack1.mp3">Go to My Website</button>
+        </div>
+    </div>
+
+    <!-- Right (Friend) -->
+    <div class="side right">
+        <div class="content">
+            <div class="img-box">
+                <img src="Bisho/img/bisho.jpg" alt="Friend Photo">
+            </div>
+
+            <h1>Bisho</h1>
+            <p>Welcome to My Magic World</p>
+            <p>Videographer & Editor</p>
+
+            <div class="about-box">
+                <h3>Creative Studio</h3>
+                <p>
+                    Studio specialized in photography, videography, cinematic editing,
+                    and professional content creation for all events and projects.
+                </p>
+            </div>
+
+            <button class="btn-go" data-url="Bisho/Home.html" data-sound="camera-shutter-314056.mp3">Explore My Website</button> 
+    </div>
+
+</div>
+
+<!-- Fade Overlay -->
+<div class="fade-overlay" id="fadeOverlay"></div>
+
+<script>
+const buttons = document.querySelectorAll('.btn-go');
+const sides = document.querySelectorAll('.side');
+const overlay = document.getElementById('fadeOverlay');
+
+buttons.forEach(btn => {
+    btn.addEventListener('click', e => {
+        e.preventDefault();
+
+        const url = btn.getAttribute('data-url');
+        const soundFile = btn.getAttribute('data-sound');
+
+        // تشغيل الصوت
+        const audio = new Audio(soundFile);
+        audio.volume = 1;
+        audio.play().catch(err => console.log(err));
+
+        // عمل الأنيميشن فور الضغط
+        const parentSide = btn.closest('.side');
+        parentSide.classList.add('active-side');
+        sides.forEach(s => {
+            if (s !== parentSide) s.classList.add('inactive-side');
+        });
+
+        overlay.classList.add('active');
+
+        // بعد ما الصوت يخلص → حول للصفحة
+        audio.onended = () => {
+            window.location.href = url;
+        };
+    });
+});
+</script>
+
+
+
+</body>
+</html>
